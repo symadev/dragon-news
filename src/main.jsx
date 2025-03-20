@@ -12,6 +12,9 @@ import Home from './Component/Home/Home.jsx';
 import Root from './Root/Root.jsx';
 
 import Middle from './Component/Middle/Middle.jsx';
+import Login from './Component/Login/Login.jsx';
+import LoginPage from './Component/LoginPage/LoginPage.jsx';
+import Register from './Component/Register/Register.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,14 +32,25 @@ const router = createBrowserRouter([
           {
             path: "category/:id",
             element: <Middle />, // No loader needed
-          }
-          
-          
-          
-          
+          },         
         ],
       },
     ],
+  },
+  {
+    path: "auth",
+    element:<LoginPage></LoginPage>,
+    children: [
+      {
+        path: "/auth/login",
+        element: <Login></Login>, 
+      },
+      {
+        path: "/auth/register",
+        element: <Register></Register>, 
+      },
+              
+    ], // No loader needed
   },
 ]);
 
