@@ -4,13 +4,23 @@ import Right from "../Right/Right";
 
 
 const Main = () => {
-    return (
-        <div>
-           <Left className="left col-span-3" ></Left> 
-           <Middle className="col-span-6"></Middle>
-           <Right className=" col-span-3"></Right>
 
+    const Main = ({ className }) => {
+        return <div className={`${className}`}>Main Content</div>;
+    };
+    
+    return (
+        <div className="grid grid-cols-12 p-10 gap-4">
+        <div className="col-span-3">
+            <Left />
         </div>
+        <div className="col-span-6">
+            <Middle />
+        </div>
+        <div className="col-span-3">
+            <Right />
+        </div>
+    </div>
     );
 };
 

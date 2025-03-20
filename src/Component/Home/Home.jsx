@@ -10,7 +10,7 @@ const Home = () => {
           <Header></Header>
           <Nav></Nav>
           <Navbar></Navbar>
-          <Main className="w-11/12 mx-auto p-5 grid md:grid-cols-12 gap-4"></Main>
+          <Main className="w-11/12 mx-auto p-10 grid md:grid-cols-12 gap-4"></Main>
         </div>
     );
 };
