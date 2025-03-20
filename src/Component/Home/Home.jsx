@@ -6,7 +6,7 @@ import Navbar from "../Navbar/Navbar";
 
 const Home = () => {
     return (
-        <div className=" font-poppins">
+        <div className=" font-poppins w-11/12 mx-auto">
           <Header></Header>
           <Nav></Nav>
           <Navbar></Navbar>

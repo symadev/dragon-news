@@ -4,3 +4,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* //jegulo te click korbo oigulo te color dekhanor jonne aitah add korte hobe
+
+//for active btn */
+
+a.active {
+  background-color: #757575
+}
