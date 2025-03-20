@@ -22,7 +22,7 @@ const Register = () => {
               </label>
             </div>
             <div className="form-control items-center mt-6 ml-8">
-              <button className="btn btn-wide btn-accent">Login</button>
+              <button className="btn btn-wide btn-accent">Register</button>
             </div>
           </form>
          
