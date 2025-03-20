@@ -1,9 +1,14 @@
-import React from 'react';
+import Header from "../Header/Header";
+import Main from "../Main/Main";
+import Nav from "../Nav/Nav";
+
 
 const Home = () => {
     return (
         <div>
-            <h1>this is my dragon news webpage</h1>
+          <Header></Header>
+          <Nav></Nav>
+          <Main></Main>
         </div>
     );
 };
