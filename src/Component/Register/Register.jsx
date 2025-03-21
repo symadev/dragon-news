@@ -1,22 +1,54 @@
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const Register = () => {
+//import create user
+const {createUser,setUser} = useContext(AuthContext);
+
+
+
+//this is for localhost a provided information gulo dekhar jonne
+  const handleRegister= (event)=>{
+    event.preventDefault();
+    const form = new FormData(event.target);
+    const email=form.get("email");
+    
+    const password=form.get("password");
+    
+     console.log(email,password);
+
+
+
+
+//for create user
+     createUser(email,password)
+     .then(result =>{
+       const user= result.user
+       setUser(user);
+      
+     })
+     .catch(error=>{
+        console.log('Error', error.message);
+     })
+
+  }
     return (
        
         <div className="flex items-center justify-center min-h-screen bg-base-200">
         <div className="card bg-base-100 w-full max-w-sm shadow-2xl">
-          <form className="card-body">
+          <form  onSubmit={ handleRegister} className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
-              <input type="email" placeholder="email" className="input input-bordered" required />
+              <input name="email" type="email" placeholder="email" className="input input-bordered" required />
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
-              <input type="password" placeholder="password" className="input input-bordered" required />
+              <input name="password" type="password" placeholder="password" className="input input-bordered" required />
               <label className="label">
                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
               </label>
