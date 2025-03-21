@@ -4,7 +4,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const Register = () => {
 //import create user
-const {createUser,setUser} = useContext(AuthContext);
+const {createUser,setUser,updateUserProfile} = useContext(AuthContext);
 
 
 
@@ -26,6 +26,9 @@ const {createUser,setUser} = useContext(AuthContext);
      .then(result =>{
        const user= result.user
        setUser(user);
+       updateUserProfile({
+        displayName: name,});
+
       
      })
      .catch(error=>{

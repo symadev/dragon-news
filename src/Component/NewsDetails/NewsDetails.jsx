@@ -9,7 +9,7 @@ const NewsDetails = () => {
     const news = data.data[0];
     console.log(news);
     return (
-<div>
+<div className="w-11/12 mx-auto">
     
 <Header />
         <Nav />
