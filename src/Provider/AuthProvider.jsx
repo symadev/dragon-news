@@ -9,20 +9,27 @@ const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  console.log(user);
+  const [loading, setLoading] = useState(true);
+  console.log(user,loading);
 
   const createUser = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
+    
+
   };
 
 
 
   const signInUser = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
+   
   };
 
 
   const logout = () => {
+    setLoading(true);
     return signOut(auth);
   };
 
@@ -37,6 +44,7 @@ const AuthProvider = ({ children }) => {
     createUser, 
     logout,
     signInUser,
+    loading,
   };
 
 
@@ -47,6 +55,8 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
         console.log('currently logged user', currentUser);
         setUser(currentUser);
+        //akbar log in korar por false hobe
+        setLoading(false);
        
        
     });

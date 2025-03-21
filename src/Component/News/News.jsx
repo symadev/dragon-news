@@ -1,5 +1,6 @@
 import React from "react";
 import { FaRegEye, FaStar, FaShareAlt, FaBookmark } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const NewsCard = ({ news }) => {
   return (
@@ -44,7 +45,7 @@ const NewsCard = ({ news }) => {
         </div>
 
         <div className="card-actions justify-end">
-          <button className="btn btn-primary btn-sm">Read More</button>
+         <Link to = {`/news/${news._id}`}className="btn btn-primary btn-sm">Read More</Link> 
         </div>
       </div>
     </div>

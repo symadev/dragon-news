@@ -5,6 +5,7 @@ import News from "../News/News";
 const Middle = () => {
     const { id } = useParams();
     const [newsList, setNewsList] = useState([]);
+    
    
 
     useEffect(() => {
